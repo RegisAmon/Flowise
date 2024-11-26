@@ -4,7 +4,7 @@ export type MessageType = 'apiMessage' | 'userMessage'
 
 export type ChatflowType = 'CHATFLOW' | 'MULTIAGENT'
 
-export enum chatType {
+export enum ChatType {
     INTERNAL = 'INTERNAL',
     EXTERNAL = 'EXTERNAL'
 }
@@ -286,6 +286,22 @@ export interface ICustomTemplate {
     badge?: string
     framework?: string
     usecases?: string
+}
+
+export interface INodeOverrides {
+    [key: string]: {
+        label: string
+        name: string
+        type: string
+        enabled: boolean
+    }[]
+}
+
+export interface IVariableOverride {
+    id: string
+    name: string
+    type: 'static' | 'runtime'
+    enabled: boolean
 }
 
 // DocumentStore related
